@@ -1,7 +1,9 @@
 import datetime
+
 from sqlalchemy import ForeignKey, DateTime, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from db.base import Base
+
+from src.db.base import Base
 
 
 class Order(Base):

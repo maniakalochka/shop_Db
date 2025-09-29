@@ -1,6 +1,7 @@
 from sqlalchemy import ForeignKey, Integer, Numeric, Index, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from db.base import Base
+
+from src.db.base import Base
 
 
 class OrderItem(Base):
