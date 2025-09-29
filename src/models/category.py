@@ -9,7 +9,9 @@ class Category(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(255), nullable=False)
-    parent_id: Mapped[Optional[int]] = mapped_column(ForeignKey("categories.id"), nullable=True)
+    parent_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("categories.id"), nullable=True
+    )
 
     parent: Mapped[Optional["Category"]] = relationship(
         back_populates="children", remote_side=[id]
@@ -18,6 +20,12 @@ class Category(Base):
 
     products: Mapped[list["Product"]] = relationship(back_populates="category")  # type: ignore
 
-    __table_args__ = (
-        Index("idx_categories_parent_id", "parent_id"),
-    )
+    __table_args__ = (Index("idx_categories_parent_id", "parent_id"),)
+
+    def __repr__(self) -> str:
+        return (
+            f"Category("
+            f"id={self.id}, "
+            f"name='{self.name}', "
+            f"parent_id={self.parent_id})"
+        )

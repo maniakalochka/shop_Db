@@ -11,6 +11,12 @@ class Client(Base):
 
     orders: Mapped[list["Order"]] = relationship(back_populates="client")  # type: ignore
 
-    __table_args__ = (
-        Index("idx_clients_name", "name"),
-    )
+    __table_args__ = (Index("idx_clients_name", "name"),)
+
+    def __repr__(self) -> str:
+        return (
+            f"Client("
+            f"id={self.id}, "
+            f"name='{self.name}', "
+            f"address='{self.address}')"
+        )

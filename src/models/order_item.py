@@ -19,3 +19,12 @@ class OrderItem(Base):
         Index("idx_order_items_product_id", "product_id"),
         UniqueConstraint("order_id", "product_id", name="uq_order_items_order_product"),
     )
+
+    def __repr__(self) -> str:
+        return (
+            f"OrderItem("
+            f"order_id={self.order_id}, "
+            f"product_id={self.product_id}, "
+            f"quantity={self.quantity}, "
+            f"price={self.price})"
+        )

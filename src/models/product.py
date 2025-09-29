@@ -18,3 +18,13 @@ class Product(Base):
         Index("idx_products_category_id", "category_id"),
         Index("idx_products_name", "name"),
     )
+
+    def __repr__(self) -> str:
+        return (
+            f"Product("
+            f"id={self.id}, "
+            f"name='{self.name}', "
+            f"category_id={self.category_id}, "
+            f"quantity={self.quantity}, "
+            f"price={self.price})"
+        )
