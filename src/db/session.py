@@ -5,7 +5,7 @@ from sqlalchemy.pool import NullPool
 
 from core.config import settings
 
-DB_URL = settings.AUTH_DB_URL
+DB_URL = settings.DB_URL
 DATABASE_PARAMS = {"poolclass": NullPool}
 
 engine = create_async_engine(url=DB_URL, echo=False, **DATABASE_PARAMS)
