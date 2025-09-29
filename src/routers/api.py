@@ -1,14 +1,14 @@
-from fastapi import FastAPI, Depends
+from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
 
 from src.db.session import SessionLocal
 from src.schemas.item import AddItemPayload
 from src.services.order_items import add_item_to_order
 
-app = FastAPI()
+api_router = APIRouter()
 
 
-@app.post("/orders/{order_id}/items")
+@api_router.post("/orders/{order_id}/items")
 def add_item(
     order_id: int, payload: AddItemPayload, db: Session = Depends(SessionLocal)
 ) -> dict[str, int]:
