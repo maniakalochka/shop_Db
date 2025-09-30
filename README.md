@@ -8,3 +8,5 @@ git clone https://github.com/maniakalochka/shop_Db
 cd shop_Db
 docker compose up --build
 ```
+
+Скрипты на SQL и SQLalhemy находятся в папке src/analytics/orm и src/analytics/raw_queries соответственно
