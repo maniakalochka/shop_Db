@@ -10,7 +10,7 @@ from src.models.product import Product
 async def add_item_to_order(
     db: AsyncSession, order_id: int, product_id: int, quantity: int
 ) -> OrderItem:
-    """Добавление товара в заказ с проверками (асинхронная версия)"""
+    """Добавление товара в заказ с проверкам"""
 
     if quantity <= 0:
         raise HTTPException(status_code=400, detail="Quantity must be positive")
