@@ -9,4 +9,4 @@ cd shop_Db
 docker compose up --build
 ```
 
-Скрипты на SQL и SQLalhemy находятся в папке src/analytics/orm и src/analytics/raw_queries соответственно
+Скрипты на SQL и SQLAlhemy находятся в папке src/analytics/orm и src/analytics/raw_queries соответственно
