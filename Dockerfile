@@ -15,7 +15,6 @@ RUN curl -sSL https://install.python-poetry.org | python3 - \
 
 WORKDIR /app
 
-# Копируем весь проект, включая alembic.ini
 COPY . .
 
 ENV PYTHONPATH=/app
