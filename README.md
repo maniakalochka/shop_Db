@@ -14,4 +14,4 @@ docker compose up --build
 ER-дииграмма
 ![ER-diagram shop_db.png](ER-diagram%20shop_db.png)
 
-Перейдите на http://localhost:8000/docs для просмотра документации по API
+Перейдите 127.0.0.1:8000/docs для просмотра документации по API 
