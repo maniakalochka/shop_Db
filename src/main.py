@@ -1,11 +1,12 @@
 import logging
+from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
 import uvicorn
 from fastapi import FastAPI
 
-from db.session import engine, SessionLocal
-from routers.api import api_router
+from src.db.session import engine, SessionLocal
+from src.routers.api import api_router
 
 log = logging.getLogger(__name__)
 

@@ -6,14 +6,16 @@ from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from src.core.config import settings
 from src.db.base import Base  # noqa: F401
 from src.models import Category, Client, Order, Product, OrderItem  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", settings.DB_URL)
+
+config.set_main_option(
+    "sqlalchemy.url", value="postgresql+psycopg2://postgres:root@db:5432/shop_db"
+)
 
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

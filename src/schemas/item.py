@@ -2,7 +2,7 @@ from pydantic import BaseModel, field_validator
 
 
 class AddItemPayload(BaseModel):
-    id: int
+    product_id: int
     quantity: int
 
     @field_validator("quantity")
