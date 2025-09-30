@@ -1,4 +1,4 @@
-from fastapi import Depends, APIRouter
+from fastapi import APIRouter, Depends
 
 from src.db.session import get_async_session
 from src.schemas.item import AddItemPayload

@@ -5,7 +5,7 @@ from typing import AsyncGenerator
 import uvicorn
 from fastapi import FastAPI
 
-from src.db.session import engine, SessionLocal
+from src.db.session import SessionLocal, engine
 from src.routers.api import api_router
 
 log = logging.getLogger(__name__)

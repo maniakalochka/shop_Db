@@ -1,4 +1,4 @@
-from sqlalchemy import String, Text, Index
+from sqlalchemy import Index, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.db.base import Base
