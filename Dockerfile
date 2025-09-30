@@ -1,0 +1,26 @@
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_NO_INTERACTION=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev curl ca-certificates \
+    postgresql-client redis-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV POETRY_VERSION=2.0.0
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+
+WORKDIR /app
+
+# Копируем весь проект, включая alembic.ini
+COPY . .
+
+ENV PYTHONPATH=/app
+ENV POETRY_VIRTUALENVS_CREATE=false
+
+RUN poetry install --no-root
+
+ENTRYPOINT ["/app/entrypoint.sh"]
