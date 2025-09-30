@@ -7,7 +7,6 @@ JOIN orders o ON o.id = oi.order_id
 JOIN categories c ON c.id = p.category_id
 LEFT JOIN categories rc ON rc.id = c.parent_id
 WHERE o.created_at >= :date_from
-  /* если не sliding: AND o.created_at < :date_to */
 GROUP BY p.id, p.name, rc.name
 ORDER BY SUM(oi.quantity) DESC
 LIMIT 5;
