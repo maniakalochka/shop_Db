@@ -10,3 +10,6 @@ docker compose up --build
 ```
 
 Скрипты на SQL и SQLAlchemy находятся в папке src/analytics/orm и src/analytics/raw_queries соответственно
+
+ER-дииграмма
+![ER-diagram shop_db.png](ER-diagram%20shop_db.png)
